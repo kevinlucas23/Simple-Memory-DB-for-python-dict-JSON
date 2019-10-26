@@ -1,6 +1,5 @@
 from weakref import WeakSet, WeakValueDictionary
 from collections import defaultdict
-import ast
 # UNIQ_ID=0
 
 class Record:
@@ -40,7 +39,6 @@ class J_DB:
         return [x[1] for x in ret]
 
     def _get_(self, query):
-        # query = ast.literal_eval(query)
         if query.get("type",None)=="list":
             ret=self.get_list(query)
         else: 
@@ -50,11 +48,7 @@ class J_DB:
             for key in compressed:
                 if first_flag:
                     for record in self.db[key][compressed[key]]:
-                        # try:
                         db._add_(record.record_id,record.record)
-                        # except:
-                        #     self.db[key][compressed[key]].pop(idx)
-                            # continue
                     first_flag=False
                 elif key in db.db:
                     db_tmp=J_DB()
@@ -98,7 +92,6 @@ class J_DB:
                 path.append(key)
                 self._convert_key_(path,record[key],ret)
                 path.pop()
-        # return ret
 
     def delete(self,record):
         records=self._get_(record)
