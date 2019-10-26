@@ -7,6 +7,7 @@ if  __name__ == "__main__":
     db.add({"last": "Doe","first":"John","active":"true","location":{"city":"Oakland","state":"CA","postalCode":"94607"}})
     db.add({"last": "Doe","first":"Lucy","active":"true","location":{"place":{"city":"Oakland","state":"CA"},"postalCode":"94607"}})
     db.add({"last": "Doe","first":"Allen","active":"true","postalCode":"94607","location":{"place":{"city":"Oakland","state":"CA"}}})
+    
     print(db.get({"location":{"place":{"state":"CA"}},"first":"Lucy"}))
     #[{'active': 'true', 'last': 'Doe', 'location': {'postalCode': '94607', 'place': {'city': 'Oakland', 'state': 'CA'}}, 'first': 'Lucy'}]
     
