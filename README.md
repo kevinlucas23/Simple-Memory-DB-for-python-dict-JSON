@@ -1,5 +1,5 @@
 # Simple-Memory-DB-for-python-dict-jSON-
-A simple DB for python recursive dictionary, provide api for add, query and delete. Also support query for list type. The query is staple which means the element add first will come first in the return list.
+A simple DB for python recursive dictionary, provide api for add, query and delete. Also support query for list type. The query is stable which means the element add first will come first in the return list.
 
 ```
 if  __name__ == "__main__":
